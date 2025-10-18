@@ -1,73 +1,207 @@
-# Welcome to your Lovable project
+# 🍔 Hungry House
 
-## Project info
+A modern, full-featured food delivery platform built with React, TypeScript, and Supabase. Hungry House provides a seamless experience for customers to browse restaurants, order food, track deliveries, and manage their profiles.
 
-**URL**: https://lovable.dev/projects/8daa55c6-14c4-43d6-afa9-c92236ece69b
+## 🌟 Features
 
-## How can I edit this code?
+### Customer Features
+- **Browse & Order**: Explore restaurants, view menus, and place orders with ease
+- **Real-time Order Tracking**: Track your order status from preparation to delivery
+- **User Authentication**: Secure login and registration with profile management
+- **Shopping Cart**: Add items, customize quantities, and manage your cart
+- **Offers & Promotions**: Access exclusive deals and discounts
+- **Order History**: View past orders and reorder favorites
+- **Gallery**: Browse food images and restaurant showcases
+- **Contact Support**: Get help when you need it
 
-There are several ways of editing your application.
+### Admin Features
+- **Order Management**: Monitor and manage all incoming orders
+- **Agent Management**: Assign and track delivery agents
+- **Offers Management**: Create and manage promotional campaigns
+- **Analytics & Insights**: View business metrics and performance data
+- **Real-time Dashboard**: Track orders, revenue, and operations
 
-**Use Lovable**
+### Agent Features
+- **Delivery Dashboard**: View assigned deliveries
+- **Order Updates**: Update delivery status in real-time
+- **Route Optimization**: Manage delivery routes efficiently
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8daa55c6-14c4-43d6-afa9-c92236ece69b) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- **React 18** - Modern UI library
+- **TypeScript** - Type-safe development
+- **Vite** - Lightning-fast build tool
+- **React Router** - Client-side routing
+- **TanStack Query** - Server state management
 
-**Use your preferred IDE**
+### UI Components & Styling
+- **shadcn/ui** - High-quality React components
+- **Radix UI** - Accessible component primitives
+- **Tailwind CSS** - Utility-first CSS framework
+- **Lucide React** - Beautiful icon library
+- **Recharts** - Data visualization
+- **Embla Carousel** - Smooth carousels
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend & Database
+- **Supabase** - Backend as a Service
+  - PostgreSQL database
+  - Real-time subscriptions
+  - Authentication
+  - Row Level Security
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Form & Validation
+- **React Hook Form** - Performant form handling
+- **Zod** - Schema validation
+- **@hookform/resolvers** - Form validation integration
 
-Follow these steps:
+### Additional Libraries
+- **date-fns** - Date manipulation
+- **Sonner** - Toast notifications
+- **next-themes** - Dark mode support
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📦 Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
+- **Node.js** (v18 or higher) - [Install with nvm](https://github.com/nvm-sh/nvm)
+- **npm** or **bun** package manager
+- **Supabase Account** - [Sign up](https://supabase.com)
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Setup Instructions
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. **Clone the repository**
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd Hungry-house
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
+
+3. **Configure Environment Variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Set up Supabase**
+   - Create a new Supabase project
+   - Run the migrations in the `supabase/` directory
+   - Configure authentication providers
+   - Set up Row Level Security policies
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   bun dev
+   ```
+
+6. **Open your browser**
+   
+   Navigate to `http://localhost:5173`
+
+## 🚀 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 📁 Project Structure
+
+```
+Hungry-house/
+├── src/
+│   ├── components/          # Reusable UI components
+│   │   ├── ui/             # shadcn/ui components
+│   │   ├── BottomNav.tsx   # Mobile navigation
+│   │   ├── TopNav.tsx      # Header navigation
+│   │   └── ...
+│   ├── pages/              # Route pages
+│   │   ├── Home.tsx        # Landing page
+│   │   ├── Menu.tsx        # Restaurant menu
+│   │   ├── Cart.tsx        # Shopping cart
+│   │   ├── Admin.tsx       # Admin dashboard
+│   │   ├── Agent.tsx       # Agent dashboard
+│   │   └── ...
+│   ├── contexts/           # React contexts
+│   │   └── AuthContext.tsx # Authentication state
+│   ├── hooks/              # Custom React hooks
+│   ├── integrations/       # Third-party integrations
+│   │   └── supabase/       # Supabase client & types
+│   ├── lib/                # Utility functions
+│   └── utils/              # Helper utilities
+├── supabase/               # Supabase migrations & config
+├── public/                 # Static assets
+└── ...config files
+
 ```
 
-**Edit a file directly in GitHub**
+## 🔐 Authentication
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The application supports multiple user roles:
+- **Customer** - Browse and order food
+- **Admin** - Manage platform operations
+- **Agent** - Handle deliveries
 
-**Use GitHub Codespaces**
+Authentication is handled through Supabase Auth with secure session management.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 UI/UX Features
 
-## What technologies are used for this project?
+- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
+- **Dark Mode Support** - Toggle between light and dark themes
+- **Smooth Animations** - Enhanced user experience with Tailwind animations
+- **Accessible** - Built with accessibility in mind using Radix UI
+- **Toast Notifications** - Real-time feedback for user actions
+- **Loading States** - Skeleton loaders and progress indicators
 
-This project is built with:
+## 🔧 Configuration
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Tailwind Configuration
+Customize theme, colors, and plugins in `tailwind.config.ts`
 
-## How can I deploy this project?
+### TypeScript Configuration
+- `tsconfig.json` - Base TypeScript config
+- `tsconfig.app.json` - App-specific config
+- `tsconfig.node.json` - Node-specific config
 
-Simply open [Lovable](https://lovable.dev/projects/8daa55c6-14c4-43d6-afa9-c92236ece69b) and click on Share -> Publish.
+### Vite Configuration
+Build settings and plugins in `vite.config.ts`
 
-## Can I connect a custom domain to my Lovable project?
+## 📱 Responsive Breakpoints
 
-Yes, you can!
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🤝 Contributing
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 🐛 Bug Reports & Feature Requests
+
+Please use the issue tracker to report bugs or request features.
+
+## 📞 Support
+
+For support, please contact the development team or use the in-app contact form.
+
+---
+
+**Built with ❤️ using React, TypeScript, and Supabase**
